@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.content {
+  margin-inline-start: 8px;
+}
+
+.checked {
+  .content {
+    text-decoration: line-through;
+  }
+}
