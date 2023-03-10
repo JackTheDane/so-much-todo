@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
-import { ToDoItem } from "../components/ToDoItem";
 import { Separator } from "../components/Separator";
 import { trpc } from "../utils/trpc";
-import { ToDoInput } from "../components/ToDoInput";
+import { ToDoInput } from "../features/ToDo/components/ToDoInput";
+import { ToDoItem } from "../features/ToDo/components/ToDoItem";
 
 export default function Home() {
-  const toDos = trpc.getToDos.useQuery();
+  const toDos = trpc.toDo.get.useQuery();
 
   const renderToDoItems = () => {
     if (!toDos.data) {

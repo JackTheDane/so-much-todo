@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { trpc } from '../utils/trpc';
+import { trpc } from '../../../utils/trpc';
 import styles from './ToDoInput.module.scss';
 
 export const ToDoInput: FC = () => {
@@ -8,10 +8,10 @@ export const ToDoInput: FC = () => {
 
   const clearInput = () => setNewToDo('');
 
-  const createToDo = trpc.createToDo.useMutation({
+  const createToDo = trpc.toDo.create.useMutation({
     onSettled(data) {
-      trpcContext.getToDos.cancel();
-      trpcContext.getToDos.setData(undefined, (old) => [...(old ?? []), ...(data ? [data] : [])]);
+      trpcContext.toDo.get.cancel();
+      trpcContext.toDo.get.setData(undefined, (old) => [...(old ?? []), ...(data ? [data] : [])]);
       clearInput();
     },
   });
