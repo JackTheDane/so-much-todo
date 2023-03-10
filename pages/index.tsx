@@ -22,9 +22,7 @@ export default function Home() {
 
 
     return remainingToDos.map(({ id, label, completed }) => (
-      <ToDoItem key={id} id={id} checked={completed}>
-        {label}
-      </ToDoItem>
+      <ToDoItem key={id} id={id} checked={completed} text={label} />
     ));
   };
 
@@ -42,9 +40,7 @@ export default function Home() {
         <div className={styles.toDoContainer}>
           <Separator />
           {completedToDos.map(({ id, label, completed }) => (
-            <ToDoItem key={id} id={id} checked={completed}>
-              {label}
-            </ToDoItem>
+            <ToDoItem key={id} id={id} checked={completed} text={label} />
           ))}
         </div>
       </>

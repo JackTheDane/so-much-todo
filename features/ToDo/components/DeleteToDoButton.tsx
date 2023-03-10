@@ -24,6 +24,6 @@ export const DeleteToDoButton: FC<DeleteToDoButtonProps> = ({
   }
 
   return (
-    <Button onClick={onDelete}>Delete</Button>
+    <Button onClick={onDelete} title="Delete">❌</Button>
   )
 }

@@ -1,0 +1,13 @@
+.root {
+  border: none;
+  background-color: transparent;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:not(:disabled) {
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: .3);
+    }
+  }
+}

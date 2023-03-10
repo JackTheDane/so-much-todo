@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Button } from '../../../components/Button'
 
-export const EditToDoButton = () => {
+type EditToDoButtonProps = {
+  onClick(): void;
+}
+
+export const EditToDoButton: FC<EditToDoButtonProps> = ({
+  onClick
+}) => {
   return (
-    <Button>Edit</Button>
+    <Button onClick={onClick} title="Edit">📝</Button>
   )
 }
